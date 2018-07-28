@@ -20,19 +20,21 @@
     <section id="map-container" aria-labelledby="map-aria-description" role="application">
       <div id="map"></div>
     </section>
-    <label id="map-aria-description" class="map-aria-description">Restaurants on the map</label>
+    <label id="map-aria-description" class="label map-aria-description">Restaurants on the map</label>
     <section>
       <div class="filter-options">
-        <h2>Filter Results</h2>
         <div class="filter-selects">
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-        <label id="neighborhood-label" class="filter-label">neighborhoods</label>
+        <label id="neighborhood-label" class="label filter-label">neighborhoods</label>
         <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
-        <label id="cuisines-label" class="filter-label">cuisines</label>
+        <label id="cuisines-label" class="label filter-label">cuisines</label>
+      </div>
+      <div class="filter-results">
+        <h2 id="filter-results">Filter Results</h2>
       </div>
       <ul id="restaurants-list"></ul>
     </section>

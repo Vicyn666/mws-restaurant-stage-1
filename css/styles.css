@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+html,
+body {
+  height: 100%;
+}
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -11,8 +16,8 @@ body {
 	background-color: #fdfdfd;
 	margin: 0;
 	position:relative;
-	max-width: 1000px;
-	margin: auto;
+	max-width: 1150px;
+	min-width: 350px;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -32,14 +37,16 @@ a img{
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
+	display:flex;
+	flex-direction: column;
+
 }
 #footer {
   background-color: #444;
@@ -49,6 +56,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+	}
+
+
+
+
+
+
+
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -61,14 +76,17 @@ nav {
 }
 nav h1 {
   margin: auto;
-	font-size: 30px
+	font-size: 30px;
+  background-color: lightgrey;
 }
 nav h1 a {
-  color: #fff;
-  font-size: 14pt;
+  color: black;
+  font-size: 20pt;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+	text-align: center;
+  padding-left: 10px;
 }
 #breadcrumb {
     padding: 10px 40px 16px;
@@ -112,20 +130,30 @@ nav h1 a {
 .filter-options {
   width: 100%;
   height: 50px;
-  background-color: #3397DB;
+  background-color: initial;
   align-items: center;
 	display:flex;
 	flex-direction: column;
+	padding-top: 10px;
+	padding-bottom: 40px;
 }
-.filter-options h2 {
-  color: white;
-  font-size: 1rem;
+
+.filter-results {
+  width: 100%;
+  background-color: lightgrey;
+  align-items: center;
+}
+
+#filter-results {
+  color: black;
+  font-size: 20px;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  text-align: center;
+	padding-top: 10px;
 }
 .filter-options select {
-  background-color: white;
+  background-color: lightgrey;
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
   font-size: 11pt;
@@ -136,6 +164,11 @@ nav h1 a {
   width: 200px;
 }
 
+.label {
+  display: none;
+}
+
+
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
@@ -144,16 +177,17 @@ nav h1 a {
   padding: 30px 15px 60px;
   text-align: center;
 	display:flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  margin: 20px;
   min-height: 380px;
-  padding: 0 30px 25px;
-  text-align: left;
+  text-align: center;
   width: 270px;
 }
 #restaurants-list .restaurant-img {
@@ -161,7 +195,6 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
 }
 #restaurants-list li h1 {
