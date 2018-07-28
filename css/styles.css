@@ -51,17 +51,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #f3f3f3;
 }
 #footer {
-	position: absolute;/* Фиксированное положение */
-	bottom: 0; /* Левый нижний угол */
 	background-color: #444;
-
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
 	max-width: 1150px;
-	bottom: 0;
 
   }
 /* ====================== Navigation ====================== */
