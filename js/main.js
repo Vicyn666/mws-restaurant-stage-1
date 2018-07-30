@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
+  registerServiceWarker()
 });
 
 /**
@@ -198,13 +199,12 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
+
+registerServiceWarker = () => {
+  if (!navigator.serviceWorker) return;
+      navigator.serviceWorker.register("/sw.js").then(function() {
+      console.log('registration worked!');
+    }).catch(function() {
+      console.log("Registration failed");
+})
+};
